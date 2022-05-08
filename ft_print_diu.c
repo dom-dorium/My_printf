@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_diu.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djeannot <djeannot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:40:12 by djeannot          #+#    #+#             */
-/*   Updated: 2022/04/28 13:05:52 by djeannot         ###   ########.fr       */
+/*   Updated: 2022/05/08 15:13:23 by djeannot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_putnbr(int n)
 		ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
 	}
-	return (ft_intlen(n));
+	return (ft_nblen(n));
 }
 
 int	ft_putnbrpos(unsigned int n)
@@ -41,5 +41,5 @@ int	ft_putnbrpos(unsigned int n)
 		ft_putnbrpos(n / 10);
 		ft_putnbrpos(n % 10);
 	}
-	return (ft_intlen(n));
+	return (ft_nblen(n));
 }

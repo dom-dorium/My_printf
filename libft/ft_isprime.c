@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_isprime.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djeannot <djeannot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 14:42:39 by djeannot          #+#    #+#             */
-/*   Updated: 2022/04/29 14:31:34 by djeannot         ###   ########.fr       */
+/*   Created: 2022/04/29 12:13:37 by djeannot          #+#    #+#             */
+/*   Updated: 2022/04/29 12:26:01 by djeannot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+int	ft_isprime(int n)
 {
-	char		*nb;
-	int			size;
-	long int	nbr;
+	int	i;
 
-	nbr = n;
-	size = ft_nblen(nbr);
-	nb = ft_calloc(size + 1, sizeof(char));
-	if (nb == NULL)
-		return (NULL);
-	if (n < 0)
+	i = 2;
+	if (n < 2)
+		return (0);
+	if (n == 2)
+		return (1);
+	while (i < n)
 	{
-		nb[0] = '-';
-		nbr *= -1;
+		if (n % i == 0)
+			return (0);
+		i++;
 	}
-	if (nbr == 0)
-		nb[0] = '0';
-	while (nbr > 0)
-	{
-		nb[size - 1] = (nbr % 10) + '0';
-		nbr /= 10;
-		--size;
-	}
-	return (nb);
+	if (i == n)
+		return (1);
+	return (0);
 }
